@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/idealistaTest.iml" filepath="$PROJECT_DIR$/.idea/modules/idealistaTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/idealistaTest_main.iml" filepath="$PROJECT_DIR$/.idea/modules/idealistaTest_main.iml" group="idealistaTest" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/idealistaTest_test.iml" filepath="$PROJECT_DIR$/.idea/modules/idealistaTest_test.iml" group="idealistaTest" />
+    </modules>
+  </component>
+</project>
