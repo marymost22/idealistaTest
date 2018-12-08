@@ -14,4 +14,9 @@ public class Flat extends Advertisement {
     public void setHouseSize(Integer houseSize) {
         this.houseSize = houseSize;
     }
+
+    @Override
+    public String toString() {
+        return "Tipo: Flat \t ID:" + getId() + " \t Puntuación:" + getScore() + " \t Fotos: " + getPhotos() + " \t Tamaño casa: " + getHouseSize();
+    }
 }

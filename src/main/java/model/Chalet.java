@@ -24,4 +24,9 @@ public class Chalet extends Advertisement {
     public void setGardenSize(Integer gardenSize) {
         this.gardenSize = gardenSize;
     }
+
+    @Override
+    public String toString() {
+        return "Tipo: Chalet \t ID:" + getId() + " \t Puntuación:" + getScore() + " \t Fotos: " + getPhotos() + " \t Tamaño casa: " + getHouseSize() + " \t Tamaño jardín: " + getGardenSize();
+    }
 }

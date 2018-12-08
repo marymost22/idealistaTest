@@ -8,7 +8,7 @@ public abstract class Advertisement {
     private Integer id;
     private String description;
     private Integer score;
-    private ArrayList<Photo> photos;
+    private ArrayList<Integer> pictures;
     private Date creationDate; //Esta información deberia obtenerse cuando se crea el anunció. Ahora obtendremos como fecha el momento en el que se crea el objeto.
 
 
@@ -16,7 +16,7 @@ public abstract class Advertisement {
         this.id = id;
         this.description = description;
         this.score = 0;
-        photos = new ArrayList<>();
+        pictures = new ArrayList<>();
         creationDate = new Date();
     }
 
@@ -24,16 +24,8 @@ public abstract class Advertisement {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Integer getScore() {
@@ -45,6 +37,10 @@ public abstract class Advertisement {
     }
 
     public void addPhoto(Photo photo) {
-        this.photos.add(photo);
+        this.pictures.add(photo.getId());
+    }
+
+    public ArrayList<Integer> getPhotos() {
+        return pictures;
     }
 }

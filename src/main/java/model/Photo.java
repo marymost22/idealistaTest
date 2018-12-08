@@ -37,4 +37,9 @@ public class Photo {
     public void setQuality(String quality) {
         this.quality = quality;
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + getId() + " \t " + "Quality: " + getQuality();
+    }
 }
