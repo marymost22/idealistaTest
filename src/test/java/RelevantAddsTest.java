@@ -57,7 +57,8 @@ public class RelevantAddsTest {
     @Test
     public void getOnlyRelevantTests() {
         Manager manager = Manager.getInstance();
-        ArrayList<Advertisement> relevants = manager.getRelevantAdds(this.testAdds);
+        manager.calculateAddScore(this.testAdds);
+        ArrayList<Advertisement> relevants = manager.getRelevantAdds();
         ArrayList<Advertisement> irrelevants = new ArrayList<>();
         for (Advertisement add : relevants) {
             if (add.getScore() < 40) {
@@ -70,7 +71,8 @@ public class RelevantAddsTest {
     @Test
     public void getSortedRelevantTests() {
         Manager manager = Manager.getInstance();
-        ArrayList<Advertisement> relevants = manager.getRelevantAdds(this.testAdds);
+        manager.calculateAddScore(this.testAdds);
+        ArrayList<Advertisement> relevants = manager.getRelevantAdds();
         boolean sortFlag = true;
         for (int i = 0; i < relevants.size() - 1; i++) {
             Advertisement add1 = relevants.get(i);
@@ -85,7 +87,8 @@ public class RelevantAddsTest {
     @Test
     public void getOnlyIrrelevantTests() {
         Manager manager = Manager.getInstance();
-        ArrayList<Advertisement> irrelevants = manager.getIrrelevantAdds(this.testAdds);
+        manager.calculateAddScore(this.testAdds);
+        ArrayList<Advertisement> irrelevants = manager.getIrrelevantAdds();
         ArrayList<Advertisement> relevants = new ArrayList<>();
         for (Advertisement add : irrelevants) {
             if (add.getScore() >= 40) {
@@ -95,8 +98,10 @@ public class RelevantAddsTest {
         assertEquals(0, relevants.size());
     }
 
+    @Test
     public void getQualityAvg() {
         Manager manager = Manager.getInstance();
-        assertEquals("Con los anuncios que se incluyen la media deberia ser ", manager.getAvgScore(this.testAdds), 33);
+        manager.calculateAddScore(this.testAdds);
+        assertEquals("Con los anuncios que se incluyen la media deberia ser ", manager.getAvgScore(), 33);
     }
 }
