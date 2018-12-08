@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public abstract class Advertisement {
 
@@ -8,12 +9,15 @@ public abstract class Advertisement {
     private String description;
     private Integer score;
     private ArrayList<Photo> photos;
+    private Date creationDate; //Esta información deberia obtenerse cuando se crea el anunció. Ahora obtendremos como fecha el momento en el que se crea el objeto.
+
 
     public Advertisement(Integer id, String description) {
         this.id = id;
         this.description = description;
         this.score = 0;
         photos = new ArrayList<>();
+        creationDate = new Date();
     }
 
     public Integer getId() {

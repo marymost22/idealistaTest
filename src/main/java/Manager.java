@@ -1,5 +1,6 @@
 import model.Advertisement;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,4 +29,16 @@ public class Manager {
     }
 
 
+    public ArrayList<Advertisement> getRelevantAdds(ArrayList<Advertisement> testAdds) {
+        return null;
+    }
+
+
+    public ArrayList<Advertisement> getIrrelevantAdds(ArrayList<Advertisement> testAdds) {
+        return null;
+    }
+
+    public int getAvgScore(ArrayList<Advertisement> testAdds) {
+        return 0;
+    }
 }
