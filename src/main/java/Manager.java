@@ -6,7 +6,9 @@ import java.util.List;
 
 public class Manager {
     private static Manager ourInstance = new Manager();
-    private List<String> specialWords = Arrays.asList("Luminoso", "Nuevo", "Céntrico", "Reformado", "Ático");
+    private static List<String> specialWords = Arrays.asList("Luminoso", "Nuevo", "Céntrico", "Reformado", "Ático");
+    private static Integer MIN_SCORE = 0;
+    private static Integer MAX_SCORE = 100;
 
     private Manager() {
     }

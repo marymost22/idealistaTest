@@ -17,7 +17,7 @@ public class ScoresTest {
     public void checkNoPhotoAddScore() {
         Flat flatTest = new Flat(1, null);
         Manager manager = Manager.getInstance();
-        assertEquals("Un anuncio sin foto debe tener -10 puntos", -10, manager.getAddScore(flatTest));
+        assertEquals("Un anuncio sin foto debe tener 0 puntos", 0, manager.getAddScore(flatTest));
     }
 
     @Test
@@ -54,7 +54,7 @@ public class ScoresTest {
         Flat flatTest = new Flat(1, "Esta descripción de anuncio de piso es corta. Por ello tiene por al menos veinte palabras. " +
                 "Entre ellas: Luminoso, Nuevo, Céntrico, Reformado, Ático");
         Manager manager = Manager.getInstance();
-        assertEquals("Un anuncio con descripción corta debe tener 10 puntos", 10, manager.getAddScore(flatTest));
+        assertEquals("Un anuncio con descripción corta debe tener 15 puntos", 15, manager.getAddScore(flatTest));
     }
 
 
@@ -65,7 +65,7 @@ public class ScoresTest {
                 "eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris " +
                 "nisi ut aliquip ex ea commodo consequat. ");
         Manager manager = Manager.getInstance();
-        assertEquals("Un anuncio con descripción larga debe tener 30 puntos", 30, manager.getAddScore(flatTest));
+        assertEquals("Un anuncio con descripción larga debe tener 35 puntos", 35, manager.getAddScore(flatTest));
     }
 
     @Test
@@ -75,22 +75,22 @@ public class ScoresTest {
                 "eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris " +
                 "nisi ut aliquip ex ea commodo consequat. ");
         Manager manager = Manager.getInstance();
-        assertEquals("Un anuncio con descripción larga debe tener 30 puntos", 20, manager.getAddScore(chaletTest));
+        assertEquals("Un anuncio con descripción larga debe tener 25 puntos", 25, manager.getAddScore(chaletTest));
 
     }
 
     @Test
     public void checkNoSpecialWordsInAddScore() {
-        Flat flatTest = new Flat(1, "Esta descripción de anuncio de piso es muy corta. Ninguna de ellas es especial.");
+        Flat flatTest = new Flat(1, "Esta descripción de anuncio de piso es muy corta. Ninguna palabra es especial.");
         Manager manager = Manager.getInstance();
-        assertEquals("Un anuncio sin palabras especiales debe tener 0 puntos", 0, manager.getAddScore(flatTest));
+        assertEquals("Un anuncio sin palabras especiales debe tener 5 puntos", 5, manager.getAddScore(flatTest));
     }
 
     @Test
     public void checkOneSpecialWordsInAddScore() {
         Flat flatTest = new Flat(1, "Esta descripción de anuncio de piso es muy corta. Solo con una palabra especial: Nuevo");
         Manager manager = Manager.getInstance();
-        assertEquals("Un anuncio con una palabra especial debe tener 5 puntos", 5, manager.getAddScore(flatTest));
+        assertEquals("Un anuncio con una palabra especial debe tener 10 puntos", 10, manager.getAddScore(flatTest));
     }
 
     @Test
@@ -98,7 +98,7 @@ public class ScoresTest {
         Flat flatTest = new Flat(1, "Esta descripción de anuncio de piso es corta. Por ello tiene por al menos veinte palabras. " +
                 "Entre ellas: Luminoso, Nuevo, Céntrico, Reformado, Ático.");
         Manager manager = Manager.getInstance();
-        assertEquals("Un anuncio con todas las palabras especiales debe tener 25 puntos", 25, manager.getAddScore(flatTest));
+        assertEquals("Un anuncio con todas las palabras especiales debe tener 40 puntos", 40, manager.getAddScore(flatTest));
 
     }
 
