@@ -8,6 +8,12 @@ public class Photo {
     private URL url;
     private String quality;
 
+    public Photo(Integer id, URL url, String quality) {
+        this.id = id;
+        this.url = url;
+        this.quality = quality;
+    }
+
     public Integer getId() {
         return id;
     }
