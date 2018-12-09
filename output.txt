@@ -1,0 +1,136 @@
+~~~~~~~~~~~Lista del usuario de idealista~~~~~~~~~~~
+Tipo: Flat
+Puntuación:80
+ID:4
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción: Ático céntrico muy luminoso y recién reformado, parece nuevo
+Tamaño casa: 130
+Fotos: [5]
+-------
+Tipo: Chalet
+Puntuación:65
+ID:8
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción: Maravilloso chalet situado en als afueras de un pequeño pueblo rural. El entorno es espectacular, las vistas magníficas. ¡Cómprelo ahora!
+Tamaño casa: 150
+Tamaño jardín: 20
+Fotos: [1, 7]
+-------
+Tipo: Garage
+Puntuación:50
+ID:6
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción:
+Fotos: [6]
+-------
+Tipo: Flat
+Puntuación:45
+ID:2
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción: Nuevo ático céntrico recién reformado. No deje pasar la oportunidad y adquiera este ático de lujo
+Tamaño casa: 0
+Fotos: [4]
+-------
+
+~~~~~~~~~~Lista del responsable de calidad~~~~~~~~~~
+Tipo: Flat
+Puntuación:35
+ID:5
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción: Pisazo
+Tamaño casa: 0
+Fotos: [3, 4]
+-------
+Tipo: Chalet
+Puntuación:25
+ID:3
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción:
+Tamaño casa: 210
+Tamaño jardín: 25
+Fotos: [2]
+-------
+Tipo: Chalet
+Puntuación:0
+ID:1
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción: Este piso es una ganga, compra, compra, COMPRA!!!!!
+Tamaño casa: 300
+Tamaño jardín: 0
+Fotos: []
+-------
+Tipo: Garage
+Puntuación:0
+ID:7
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción: Garaje en el centro de Albacete
+Fotos: []
+-------
+
+~~~~~~~~~~Puntuación de todos los anuncios~~~~~~~~~~
+Tipo: Flat
+Puntuación:80
+ID:4
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción: Ático céntrico muy luminoso y recién reformado, parece nuevo
+Tamaño casa: 130
+Fotos: [5]
+-------
+Tipo: Chalet
+Puntuación:65
+ID:8
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción: Maravilloso chalet situado en als afueras de un pequeño pueblo rural. El entorno es espectacular, las vistas magníficas. ¡Cómprelo ahora!
+Tamaño casa: 150
+Tamaño jardín: 20
+Fotos: [1, 7]
+-------
+Tipo: Garage
+Puntuación:50
+ID:6
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción:
+Fotos: [6]
+-------
+Tipo: Flat
+Puntuación:45
+ID:2
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción: Nuevo ático céntrico recién reformado. No deje pasar la oportunidad y adquiera este ático de lujo
+Tamaño casa: 0
+Fotos: [4]
+-------
+
+Tipo: Flat
+Puntuación:35
+ID:5
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción: Pisazo
+Tamaño casa: 0
+Fotos: [3, 4]
+-------
+Tipo: Chalet
+Puntuación:25
+ID:3
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción:
+Tamaño casa: 210
+Tamaño jardín: 25
+Fotos: [2]
+-------
+Tipo: Chalet
+Puntuación:0
+ID:1
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción: Este piso es una ganga, compra, compra, COMPRA!!!!!
+Tamaño casa: 300
+Tamaño jardín: 0
+Fotos: []
+-------
+Tipo: Garage
+Puntuación:0
+ID:7
+Fecha de creación: Sun Dec 09 20:40:57 CET 2018
+Descripción: Garaje en el centro de Albacete
+Fotos: []
+-------
