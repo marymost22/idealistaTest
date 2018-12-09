@@ -10,11 +10,6 @@ public class Garage extends Advertisement {
     }
 
     @Override
-    public String toString() {
-        return "Tipo: Garage \t ID:" + getId() + " \t Fotos: " + getPhotos() + " \t Puntuación:" + getScore();
-    }
-
-    @Override
     public Integer calculateCompleteAddScore() {
         if (!isComplete() && getPhotos() != null && getPhotos().size() > 0) {
             setComplete(true);
@@ -26,8 +21,17 @@ public class Garage extends Advertisement {
     @Override
     public Integer calculateDescriptionScore(ArrayList<String> specialWords) {
         Integer score = super.calculateDescriptionScore(specialWords);
-        //Como no es necesario que tenga descripción, contamos con esos 5 puntos.
-        return score + 5;
+        return score;
+    }
+
+    @Override
+    public String toString() {
+        return "Tipo: Garage \n" +
+                "Puntuación:" + getScore() + " \n" +
+                "ID:" + getId() + " \n" +
+                "Fecha de creación: " + getCreationDate() + " \n" +
+                "Descripción: " + getDescription() + " \n" +
+                "Fotos: " + getPhotos();
     }
 
 }

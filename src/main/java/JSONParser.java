@@ -18,14 +18,17 @@ public class JSONParser {
             switch (typology) {
                 case "CHALET":
                     Chalet addChalet = g.fromJson(arr.get(i), Chalet.class);
+                    addChalet.setUpExtraInfo();
                     advertisements.add(addChalet);
                     break;
                 case "FLAT":
                     Flat addFlat = g.fromJson(arr.get(i), Flat.class);
+                    addFlat.setUpExtraInfo();
                     advertisements.add(addFlat);
                     break;
                 case "GARAGE":
                     Garage addGarage = g.fromJson(arr.get(i), Garage.class);
+                    addGarage.setUpExtraInfo();
                     advertisements.add(addGarage);
                     break;
             }

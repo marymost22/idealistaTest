@@ -22,24 +22,39 @@ public abstract class Advertisement {
         this.complete = false;
     }
 
+
+    public void setUpExtraInfo() {
+        this.creationDate = new Date();
+        this.complete = false;
+        this.score = 0;
+    }
+
     public Integer getId() {
         return id;
     }
 
     public String getDescription() {
-        return description;
+        if (description != null) {
+            return description;
+        } else {
+            return "";
+        }
     }
 
     public Integer getScore() {
-        return score;
+        if (score != null) {
+            return score;
+        } else {
+            return 0;
+        }
     }
 
     public void setScore(Integer score) {
         this.score = score;
     }
 
-    public void addScore(Integer score) {
-        this.score += score;
+    public Date getCreationDate() {
+        return creationDate;
     }
 
     public void addPhoto(Photo photo) {
@@ -81,8 +96,9 @@ public abstract class Advertisement {
     public Integer calculateDescriptionScore(ArrayList<String> specialWords) {
         Integer score = 0;
         if (description != null) {
+            String auxString = description.toLowerCase();
             for (String word : specialWords) {
-                if (description.contains(word)) {
+                if (auxString.contains(word)) {
                     score += 5;
                 }
             }

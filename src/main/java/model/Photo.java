@@ -34,9 +34,6 @@ public class Photo {
         return quality;
     }
 
-    public void setQuality(String quality) {
-        this.quality = quality;
-    }
 
     @Override
     public String toString() {

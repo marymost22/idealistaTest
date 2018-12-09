@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Flat extends Advertisement {
     private Integer houseSize;
@@ -11,7 +12,7 @@ public class Flat extends Advertisement {
 
     @Override
     public Integer calculateCompleteAddScore() {
-        if (!isComplete() && getDescription() != null &&
+        if (!isComplete() && !Objects.equals(getDescription(), "") &&
                 getHouseSize() != null && getHouseSize() > 0 &&
                 getPhotos() != null && getPhotos().size() > 0) {
             setComplete(true);
@@ -23,7 +24,7 @@ public class Flat extends Advertisement {
     @Override
     public Integer calculateDescriptionScore(ArrayList<String> specialWords) {
         Integer score = super.calculateDescriptionScore(specialWords);
-        if (getDescription() != null) {
+        if (!Objects.equals(getDescription(), "")) {
             score += 5;
             int desLength = getDescription().split("\\s+|\n").length;
             if (desLength >= 20 && desLength < 50) {
@@ -36,7 +37,11 @@ public class Flat extends Advertisement {
     }
 
     public Integer getHouseSize() {
-        return houseSize;
+        if (houseSize != null) {
+            return houseSize;
+        } else {
+            return 0;
+        }
     }
 
     public void setHouseSize(Integer houseSize) {
@@ -45,6 +50,12 @@ public class Flat extends Advertisement {
 
     @Override
     public String toString() {
-        return "Tipo: Flat \t ID:" + getId() + " \t Puntuación:" + getScore() + " \t Fotos: " + getPhotos() + " \t Tamaño casa: " + getHouseSize();
+        return "Tipo: Flat \n" +
+                "Puntuación:" + getScore() + " \n" +
+                "ID:" + getId() + " \n" +
+                "Fecha de creación: " + getCreationDate() + " \n" +
+                "Descripción: " + getDescription() + " \n" +
+                "Tamaño casa: " + getHouseSize() + " \n" +
+                "Fotos: " + getPhotos();
     }
 }

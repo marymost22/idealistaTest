@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Chalet extends Advertisement {
 
@@ -12,7 +13,11 @@ public class Chalet extends Advertisement {
     }
 
     public Integer getHouseSize() {
-        return houseSize;
+        if (houseSize != null) {
+            return houseSize;
+        } else {
+            return 0;
+        }
     }
 
     public void setHouseSize(Integer houseSize) {
@@ -20,7 +25,11 @@ public class Chalet extends Advertisement {
     }
 
     public Integer getGardenSize() {
-        return gardenSize;
+        if (gardenSize != null) {
+            return gardenSize;
+        } else {
+            return 0;
+        }
     }
 
     public void setGardenSize(Integer gardenSize) {
@@ -28,13 +37,8 @@ public class Chalet extends Advertisement {
     }
 
     @Override
-    public String toString() {
-        return "Tipo: Chalet \t ID:" + getId() + " \t Puntuación:" + getScore() + " \t Fotos: " + getPhotos() + " \t Tamaño casa: " + getHouseSize() + " \t Tamaño jardín: " + getGardenSize();
-    }
-
-    @Override
     public Integer calculateCompleteAddScore() {
-        if (!isComplete() && getDescription() != null &&
+        if (!isComplete() && !Objects.equals(getDescription(), "") &&
                 getHouseSize() != null && getHouseSize() > 0 &&
                 getGardenSize() != null && getGardenSize() > 0 &&
                 getPhotos() != null && getPhotos().size() != 0) {
@@ -57,5 +61,16 @@ public class Chalet extends Advertisement {
         return score;
     }
 
+    @Override
+    public String toString() {
+        return "Tipo: Chalet \n" +
+                "Puntuación:" + getScore() + " \n" +
+                "ID:" + getId() + " \n" +
+                "Fecha de creación: " + getCreationDate() + " \n" +
+                "Descripción: " + getDescription() + " \n" +
+                "Tamaño casa: " + getHouseSize() + " \n" +
+                "Tamaño jardín: " + getGardenSize() + " \n" +
+                "Fotos: " + getPhotos();
+    }
 
 }

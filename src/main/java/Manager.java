@@ -16,11 +16,11 @@ public class Manager {
     private Manager() {
         this.relevantAdds = new ArrayList<>();
         this.irrelevantAdds = new ArrayList<>();
-        specialWords.add("Luminoso");
-        specialWords.add("Nuevo");
-        specialWords.add("Céntrico");
-        specialWords.add("Reformado");
-        specialWords.add("Ático");
+        specialWords.add("luminoso");
+        specialWords.add("nuevo");
+        specialWords.add("céntrico");
+        specialWords.add("reformado");
+        specialWords.add("ático");
     }
 
     public static Manager getInstance() {
@@ -42,25 +42,20 @@ public class Manager {
     }
 
     public ArrayList<Advertisement> getRelevantAdds() {
-        relevantAdds.sort((o1, o2) -> {
-            if (o1.getScore() < o2.getScore()) {
-                return 1;
-            } else if (o1.getScore() > o2.getScore()) {
-                return -1;
-            } else return 0;
-        });
         return relevantAdds;
     }
 
-
-    public ArrayList<Advertisement> getIrrelevantAdds() {
-        irrelevantAdds.sort((o1, o2) -> {
+    private void sortArray(ArrayList<Advertisement> advertisementArrayList) {
+        advertisementArrayList.sort((o1, o2) -> {
             if (o1.getScore() < o2.getScore()) {
                 return 1;
             } else if (o1.getScore() > o2.getScore()) {
                 return -1;
             } else return 0;
         });
+    }
+
+    public ArrayList<Advertisement> getIrrelevantAdds() {
         return irrelevantAdds;
     }
 
@@ -79,7 +74,10 @@ public class Manager {
     public void calculateAddScore(ArrayList<Advertisement> advertisementArrayList) {
         for (Advertisement advertisement : advertisementArrayList) {
             calculateAddScore(advertisement);
+
         }
+        sortArray(relevantAdds);
+        sortArray(irrelevantAdds);
 
     }
 
@@ -100,5 +98,23 @@ public class Manager {
         } else {
             irrelevantAdds.add(advertisement);
         }
+    }
+
+    public String getRelevantAddsString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Advertisement advertisement : getRelevantAdds()) {
+            stringBuilder.append(advertisement.toString())
+                    .append("\n-------\n");
+        }
+        return stringBuilder.toString();
+    }
+
+    public String getIrrelevantAddsString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Advertisement advertisement : getIrrelevantAdds()) {
+            stringBuilder.append(advertisement.toString())
+                    .append("\n-------\n");
+        }
+        return stringBuilder.toString();
     }
 }
