@@ -58,18 +58,21 @@ public abstract class Advertisement {
         this.complete = complete;
     }
 
-    public abstract int calculateCompleteAddScore();
+    public abstract Integer calculateCompleteAddScore();
 
     public Integer calculatePhotosScore(ArrayList<Photo> photoArrayList) {
         Integer score = 0;
-        if (getPhotos().size() == 0) {
-            score -= 10;
-        }
-        for (Integer index : getPhotos()) {
-            if (Objects.equals(photoArrayList.get(index).getQuality(), "HD")) {
-                score += 20;
-            } else if (Objects.equals(photoArrayList.get(index).getQuality(), "SD")) {
-                score += 10;
+        if (photoArrayList != null) {
+            if (getPhotos().size() == 0) {
+                score -= 10;
+            }
+
+            for (Integer index : getPhotos()) {
+                if (Objects.equals(photoArrayList.get(index - 1).getQuality(), "HD")) {
+                    score += 20;
+                } else if (Objects.equals(photoArrayList.get(index - 1).getQuality(), "SD")) {
+                    score += 10;
+                }
             }
         }
         return score;
@@ -77,9 +80,11 @@ public abstract class Advertisement {
 
     public Integer calculateDescriptionScore(ArrayList<String> specialWords) {
         Integer score = 0;
-        for (String word : specialWords) {
-            if (description.contains(word)) {
-                score += 5;
+        if (description != null) {
+            for (String word : specialWords) {
+                if (description.contains(word)) {
+                    score += 5;
+                }
             }
         }
         return score;

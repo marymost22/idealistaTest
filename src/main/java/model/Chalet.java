@@ -33,8 +33,11 @@ public class Chalet extends Advertisement {
     }
 
     @Override
-    public int calculateCompleteAddScore() {
-        if (!isComplete() && getDescription() != null && getHouseSize() > 0 && getGardenSize() > 0 && getPhotos().size() != 0) {
+    public Integer calculateCompleteAddScore() {
+        if (!isComplete() && getDescription() != null &&
+                getHouseSize() != null && getHouseSize() > 0 &&
+                getGardenSize() != null && getGardenSize() > 0 &&
+                getPhotos() != null && getPhotos().size() != 0) {
             setComplete(true);
             return 40;
         }

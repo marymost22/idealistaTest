@@ -15,8 +15,8 @@ public class Garage extends Advertisement {
     }
 
     @Override
-    public int calculateCompleteAddScore() {
-        if (!isComplete() && getDescription() != null) {
+    public Integer calculateCompleteAddScore() {
+        if (!isComplete() && getPhotos() != null && getPhotos().size() > 0) {
             setComplete(true);
             return 40;
         }
