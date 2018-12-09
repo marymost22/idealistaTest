@@ -13,17 +13,20 @@ import static junit.framework.TestCase.assertTrue;
 
 public class RelevantAddsTest {
     private ArrayList<Advertisement> testAdds;
-
+    private Manager manager = Manager.getInstance();
     public RelevantAddsTest() throws MalformedURLException {
     }
 
     @Before
-    private void setUp() throws MalformedURLException {
+    public void setUp() throws MalformedURLException {
         ArrayList<Advertisement> arrayList = new ArrayList<>();
 
         Photo photoTest1 = new Photo(1, new URL("http://www.idealista.com/pictures/1"), "HD");
         Photo photoTest2 = new Photo(2, new URL("http://www.idealista.com/pictures/1"), "SD");
-
+        ArrayList<Photo> photos = new ArrayList<>();
+        photos.add(photoTest1);
+        photos.add(photoTest2);
+        manager.setPhotosArray(photos);
 
         Flat flatTestIrrelevant1 = new Flat(1, null);
         arrayList.add(flatTestIrrelevant1);
@@ -56,7 +59,6 @@ public class RelevantAddsTest {
 
     @Test
     public void getOnlyRelevantTests() {
-        Manager manager = Manager.getInstance();
         manager.calculateAddScore(this.testAdds);
         ArrayList<Advertisement> relevants = manager.getRelevantAdds();
         ArrayList<Advertisement> irrelevants = new ArrayList<>();
@@ -70,7 +72,6 @@ public class RelevantAddsTest {
 
     @Test
     public void getSortedRelevantTests() {
-        Manager manager = Manager.getInstance();
         manager.calculateAddScore(this.testAdds);
         ArrayList<Advertisement> relevants = manager.getRelevantAdds();
         boolean sortFlag = true;
@@ -86,7 +87,6 @@ public class RelevantAddsTest {
 
     @Test
     public void getOnlyIrrelevantTests() {
-        Manager manager = Manager.getInstance();
         manager.calculateAddScore(this.testAdds);
         ArrayList<Advertisement> irrelevants = manager.getIrrelevantAdds();
         ArrayList<Advertisement> relevants = new ArrayList<>();
@@ -100,8 +100,7 @@ public class RelevantAddsTest {
 
     @Test
     public void getQualityAvg() {
-        Manager manager = Manager.getInstance();
         manager.calculateAddScore(this.testAdds);
-        assertEquals("Con los anuncios que se incluyen la media deberia ser ", manager.getAvgScore(), 33);
+        assertEquals("Con los anuncios que se incluyen la media deberia ser ", 34, manager.getAvgScore().intValue());
     }
 }
