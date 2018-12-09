@@ -104,10 +104,9 @@ public class ScoresTest {
 
     @Test
     public void checkAllSpecialWordsInAddScore() {
-        Flat flatTest = new Flat(1, "Esta descripción de anuncio de piso es corta. Por ello tiene por al menos veinte palabras. " +
-                "Entre ellas: Luminoso, Nuevo, Céntrico, Reformado, Ático.");
+        Flat flatTest = new Flat(1, "Esta descripción tiene estas palabras: Luminoso, Nuevo, Céntrico, Reformado, Ático.");
         manager.calculateAddScore(flatTest);
-        assertEquals("Un anuncio con todas las palabras especiales debe tener 40 puntos", 40, (int) flatTest.getScore());
+        assertEquals("Un anuncio con todas las palabras especiales debe tener 30 puntos", 30, (int) flatTest.getScore());
 
     }
 
