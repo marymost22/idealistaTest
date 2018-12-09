@@ -1,5 +1,5 @@
 # idealistaTest
-Implementación de la prueba técnica para idealista: calculo de puntuaciones de anuncios con Java
+Implementación de la prueba técnica para idealista: cálculo de puntuaciones de anuncios con Java
 
 Se han tenido en cuenta los siguientes **requisitos**:
 
